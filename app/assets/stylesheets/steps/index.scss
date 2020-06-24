@@ -1,12 +1,23 @@
 .vignette{
   width: auto;
-  height: 80px;
+  height: 120px;
+  float: left;
+  margin: 10px;
+}
+.small_vignette{
+  width: 100px;
+  height: auto;
+}
+.my_header{
+  text-align: center;
 }
 .para{
   width: 500px;
+  padding-right: 30px;
 }
 .container{
   margin-left: 0;
+  margin-top: 80px;
 }
 
 * {
@@ -109,6 +120,7 @@
   background-color: white;
   position: relative;
   border-radius: 6px;
+  text-align: center;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
