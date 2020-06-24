@@ -41,15 +41,7 @@
         <%= link_to "Prendre rendez vous", "#", class: "btn btn-primary" %>
       </div>
     </div>
-
 <% end %>
-
   </div>
 </div>
 
-<%= simple_form_for @answer do |f| %>
-  <%= f.text_field @question.title %>
-  <%= f.input_field @choice1.value %>
-  <%= f.input_field @choice2.value %>
-  <%= f.button :submit %>
-<% end %>
