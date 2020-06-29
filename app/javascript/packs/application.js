@@ -47,6 +47,7 @@ document.addEventListener("turbolinks:load", () => {
   AOS.init();
   reactive();
 
+
   // activeTarget();
   // timelineSwiper();
   // targetAnchor();

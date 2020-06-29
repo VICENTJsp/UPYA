@@ -1,7 +1,7 @@
 class StepsController < ApplicationController
 
   def index
-    cookies[:currentstep] = (Step.find(current_user.step_id).position).to_s || 'none'
+    cookies[:currentstep] = (Step.find(current_user.step_id).position) || 'none'
     @steps = Step.all
     @articles = Article.all
     @videos = Video.all
