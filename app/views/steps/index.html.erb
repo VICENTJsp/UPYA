@@ -1,97 +1,69 @@
-<div class="mybg-gradient">
-  <div class="container pt-5">
-    <div class="row pt-5">
-      <div class="col-12">
-        <h1 class="text-center">Mes contenus</h1>
-        <p>Ma progression:</p>
-        <p class="d-inline"><strong>Etape </p><p class="d-inline" ><%= @current_step %></strong></p>
-        <div class="progress my-5 my-shadow">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow=<%= (@current_step * 14.2857142857 - 14.2857142857).to_s %> aria-valuemin="0" aria-valuemax="100" style="width: <%= (@current_step * 14.2857142857 - 14.2857142857).to_s %>%"></div>
-        </div>
-      </div>
+<h2>CSS3 Timeline</h2>
+<p>Please set the $vertical variable to false to see the horizontal version.</p>
+<ul id='timeline'>
+  <li class='work'>
+    <input class='radio' id='work5' name='works' type='radio' checked>
+    <div class="relative">
+      <label for='work5'>Lorem ipsum dolor sit amet</label>
+      <span class='date'>12 May 2013</span>
+      <span class='circle'></span>
     </div>
-  </div>
-</div><br>
-
-<p id="data-cs" data-cs=<%= @current_step %> ></p>
-
-<div class="subbody">
-  <div class="timeline">
-
-<% for step in (0..6) %>
-
-<%# affichage cards %>
-    <% if  step + 1 == @current_step %>
-      <div id=<%= step + 1 %> class="offsetanchor">
-    <% else %>
-      <div id=<%= step + 1 %>>
-    <% end %>
-      <div id="offsettop<%= step + 1 %>" class="containerblank righter">
-        <div class="contentnone">
-        </div>
-      </div>
-      <div class="petitrondfixe" data-color=<%= step %>></div>
-      <div class="containermine right">
-        <div class="content d-flex">
-          <div>
-            <h2 class="my-number">0<%= step + 1 %></h2>
-          </div>
-          <div class="my-column">
-            <h3 class="my-subtitle"><%= @steps[step].title %></h3>
-            <% if  step + 1 == @current_step %>
-              <%= link_to "Valider ce step",  steps_up_path, class: "btn my-button my-validate"%>
-            <% end %>
-            <div id="openbutton<%= step + 1 %>" class="">
-              <% if step + 1 < @current_step %>
-                <button id="clickopen<%= step + 1 %>" class="btn my-button" value=<%= step + 1 %> >Ouvrir</button>
-              <% end %>
-            </div>
-            <div id="closebutton<%= step + 1 %>" class="">
-              <% if step + 1 < @current_step %>
-                <button id="clickclose<%= step + 1 %>" class="btn my-button" value=<%= step + 1 %> >Fermer</button>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="article<%= step + 1 %>" class="">
-        <div class="containermine left">
-          <div class="content py-2 px-4">
-            <h2>Article</h2>
-            <strong><%= @articles[step].title[0..60] + "..." %></strong><br>
-            <%= image_tag(@articles[step].image, class: "vignette my-3 mr-3") %>
-            <p class="para text-justify pr-3"><%= @articles[step].content[0..200] + "..." %></p><br>
-            <%= link_to "Voir", article_path(@articles[step].id), class: "btn my-button" %>
-          </div>
-        </div>
-      </div>
-      <div id="video<%= step + 1 %>" class="containermine right">
-        <div class="content p-4">
-          <h2>Video</h2>
-          <h3><%= @steps[step].title %></h3>
-          <div class="d-flex justify-content-between align-items-center">
-            <%= image_tag @videos[step].picture, class: "small_vignette" %>
-            <%= link_to "Voir", video_path(@videos[step].id), class: "btn my-button mr-5" %>
-          </div>
-        </div>
-      </div>
-      <div id="coach<%= step + 1 %>" class="containermine left">
-        <div class="content p-4">
-          <h2>Coach</h2>
-          <strong><%= @coachs[step].email + "@upya.fr" %></strong><br>
-          <div class="d-flex justify-content-between align-items-center">
-            <%= image_tag(@coachs[step].photo_url, class: "small_vignette") %>
-            <%= link_to "Prendre rendez-vous", coach_path(@coachs[step].id), class: "btn my-button mx-5" %>
-          </div>
-        </div>
-      </div>
-      <div id="offsetbottom<%= step + 1 %>" class="containerblank righter">
-        <div class="contentnone">
-        </div>
-      </div>
+    <div class='content'>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+      </p>
     </div>
-
-
-<% end %>
-  </div>
-</div>
+  </li>
+  <li class='work'>
+    <input class='radio' id='work4' name='works' type='radio'>
+    <div class="relative">
+      <label for='work4'>Lorem ipsum dolor sit amet</label>
+      <span class='date'>11 May 2013</span>
+      <span class='circle'></span>
+    </div>
+    <div class='content'>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+      </p>
+    </div>
+  </li>
+  <li class='work'>
+    <input class='radio' id='work3' name='works' type='radio'>
+    <div class="relative">
+      <label for='work3'>Lorem ipsum dolor sit amet</label>
+      <span class='date'>10 May 2013</span>
+      <span class='circle'></span>
+    </div>
+    <div class='content'>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+      </p>
+    </div>
+  </li>
+  <li class='work'>
+    <input class='radio' id='work2' name='works' type='radio'>
+    <div class="relative">
+      <label for='work2'>Lorem ipsum dolor sit amet</label>
+      <span class='date'>09 May 2013</span>
+      <span class='circle'></span>
+    </div>
+    <div class='content'>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+      </p>
+    </div>
+  </li>
+  <li class='work'>
+    <input class='radio' id='work1' name='works' type='radio'>
+    <div class="relative">
+      <label for='work1'>Lorem ipsum dolor sit amet</label>
+      <span class='date'>08 May 2013</span>
+      <span class='circle'></span>
+    </div>
+    <div class='content'>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+      </p>
+    </div>
+  </li>
+</ul>
